@@ -6,4 +6,5 @@ from django.db import models
 #class inherits from models.Model , the class is django's version of a database table
 class PageCount(models.Model):
         page = models.URLField(default='defaultURL')
-        count = models.IntegerField()
+        count = models.IntegerField(default=0)
+        # uniqueClientCount = 
