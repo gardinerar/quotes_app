@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 
+app_name = "polls"
 urlpatterns = [
     #The dollar sign matches the end of the string
     url(r'^$', views.index, name='index'),
