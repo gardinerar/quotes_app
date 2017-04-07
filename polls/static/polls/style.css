@@ -1,0 +1,13 @@
+li a {
+    color: green;
+}
+
+#d1 {
+    background: white url("images/kylo_ren.gif") no-repeat right bottom;
+    background-size: 200px;
+    width: 200px;
+    height: 125px;
+    position: fixed;
+    top: 10;
+    right: 20;
+}
