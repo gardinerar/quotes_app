@@ -6,21 +6,11 @@ from django.utils.encoding import python_2_unicode_compatible
 
 # Create your models here. We are creating the database schema here. :)
 #class inherits from models.Model , the class is django's version of a database table
-class PageCount(models.Model):
-        page = models.URLField(default='defaultURL')
-        count = models.IntegerField(default=0)
-        # uniqueClientCount = 
-class Question(models.Model):
+class Quotes(models.Model):
         #ID field is created automatically
-        question_text = models.CharField(max_length=200)
+        quote_text = models.CharField(max_length=200)
         pub_date = models.DateTimeField('date published')
         def __str__(self):
-                return self.question_text
+                return self.quote_text
         def was_published_recently(self):
-                return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-class Choice(models.Model):
-        question = models.ForeignKey(Question, on_delete=models.CASCADE)
-        choice_text = models.CharField(max_length=200)
-        votes = models.IntegerField(default=0)
-        def __str__(self):
-                return self.choice_text
+                return self.pub_date >= timezone.now() - datetime.timedelta(days=5)

@@ -1,9 +1,5 @@
 from django.contrib import admin
-from .models import PageCount
-from .models import Question
-from .models import Choice
+from .models import Quotes
 
 # Register your models here.
-admin.site.register(PageCount)
-admin.site.register(Question)
-admin.site.register(Choice)
+admin.site.register(Quotes)
