@@ -3,11 +3,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 <div id="d1"></div>
 
-<h3>Star Wars Opinion Poll</h3>
-{% if latest_question_list %}
+<h3>Quote Repository</h3>
+{% if latest_quote_list %}
     <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% for quotes in latest_quote_list %}
+        <li>{{ quotes.quote_text }}</li>
     {% endfor %}
     </ul>
 {% else %}

@@ -8,21 +8,13 @@ from .models import Quotes
 
 # Create your views here.
 def index(request):
-    # row, created = Quotes.objects.get_or_create(page="index")
-    # row.count = row.count + 1
-    # row.save() #writes the row back to the database
-    # if created:
-    #     words = "You are our first visitor! Congrats!"
-    # else:
-    #     words = "<p>Hello, world at " + time.strftime("%c") + "</p>"
-    # return HttpResponse(words + " Visit number " + str(row.count))
     latest_quote_list = Quotes.objects.order_by('-pub_date')[:5]
     context = {'latest_quote_list': latest_quote_list,}
     return render(request, 'polls/index.html', context) 
 
-# def detail(request, question_id):
-#     question = get_object_or_404(Question, pk=question_id)
-#     return render(request, 'polls/detail.html', {'question': question})
+# def detail(request, quotes_id):
+#     quotes = get_object_or_404(Quotes, pk=quotes_id)
+#     return render(request, 'polls/detail.html', {'quotes': quotes})
 
 # def results(request, question_id):
 #     question = get_object_or_404(Question, pk=question_id)
