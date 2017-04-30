@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
+from reconstitute import updateQuotes
 
 import time
 from .models import Quotes
@@ -10,11 +11,13 @@ from .models import Quotes
 def index(request):
     latest_quote_list = Quotes.objects.order_by('-pub_date')[:5]
     context = {'latest_quote_list': latest_quote_list,}
+    updateQuotes()
     return render(request, 'polls/index.html', context) 
 
-# def detail(request, quotes_id):
-#     quotes = get_object_or_404(Quotes, pk=quotes_id)
-#     return render(request, 'polls/detail.html', {'quotes': quotes})
+def detail(request):
+    latest_quote_list = Quotes.objects.order_by('-pub_date')[:5]
+    context = {'latest_quote_list': latest_quote_list,}
+    return render(request, 'polls/detail.html', context) 
 
 # def results(request, question_id):
 #     question = get_object_or_404(Question, pk=question_id)

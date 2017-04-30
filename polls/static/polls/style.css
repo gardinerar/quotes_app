@@ -3,10 +3,10 @@ li a {
 }
 
 #d1 {
-    background: white url("images/kylo_ren.gif") no-repeat right bottom;
-    background-size: 200px;
-    width: 200px;
-    height: 125px;
+    background: white url("images/einstein.jpg") no-repeat right bottom;
+    background-size: 300px;
+    width: 350px;
+    height: 200px;
     position: fixed;
     top: 10;
     right: 20;

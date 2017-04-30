@@ -3,13 +3,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 <div id="d1"></div>
 
-<h3>Quote Repository</h3>
+<h3>Quote Repository (Updated daily!)</h3>
 {% if latest_quote_list %}
     <ul>
-    {% for quotes in latest_quote_list %}
-        <li>{{ quotes.quote_text }}</li>
-    {% endfor %}
+        <p>This web app just reached out to brainyquote.com to update our quote database field.</p>
+        <p>Visit the 
+            <a href="https://quote-app-gardinerar.c9users.io/">main site</a>
+            to see the updated quote repository.
+        </p>
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No quotes are available.</p>
 {% endif %}

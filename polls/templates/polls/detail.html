@@ -1,1 +1,16 @@
-{{ quotes }}
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<script type="text/javascript" src="{% static 'polls/dayOfWeek.js' %}"></script>
+<div id="d1"></div>
+
+<h3>Quote Repository (Updated daily!)</h3>
+{% if latest_quote_list %}
+    <ul>
+    {% for quotes in latest_quote_list %}
+        <li>{{ quotes.quote_text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No quotes are available.</p>
+{% endif %}
