@@ -9,7 +9,7 @@ from django.utils.encoding import python_2_unicode_compatible
 class Quotes(models.Model):
         #ID field is created automatically
         quote_text = models.CharField(max_length=200, default="gasp")
-        pub_date = models.DateTimeField('date published')
+        pub_date = models.DateTimeField(default=datetime.datetime.now, blank=True)
         def __str__(self):
                 return self.quote_text
         def was_published_recently(self):
