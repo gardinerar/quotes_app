@@ -11,7 +11,7 @@ from polls.models import Quotes
 def updateQuotes():
 	page = requests.get("https://www.brainyquote.com/quotes_of_the_day.html")
 	soup = BeautifulSoup(page.content, 'html.parser')
-	quote_class = soup.find_all('div', class_="bqcpx")[0:5]
+	quote_class = soup.find_all('div', class_="bqcpx")[0:15]
 	quote_tag = range(0, len(quote_class))
 	quote_text = range(0, len(quote_class))
 	for i in xrange(0,len(quote_class)):

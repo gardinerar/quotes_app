@@ -1,16 +1,16 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-<script type="text/javascript" src="{% static 'polls/dayOfWeek.js' %}"></script>
 <div id="d1"></div>
 
-<h3>Quote Repository (Updated daily!)</h3>
+<h1 id="h3">Quote Repository</h1>
 {% if latest_quote_list %}
     <ul>
     {% for quotes in latest_quote_list %}
-        <li>{{ quotes.quote_text }}</li>
+        <p class="fancy">{{ quotes.quote_text }}<p>
     {% endfor %}
     </ul>
 {% else %}
     <p>No quotes are available.</p>
 {% endif %}
+<script type="text/javascript" src="{% static 'polls/dayOfWeek.js' %}"></script>

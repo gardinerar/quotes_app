@@ -1,5 +1,6 @@
 var date = new Date();
 var dayNum = date.getDay();
+var weekday;
 function getWeekDay(dayNum) {
     switch(dayNum) {
         case 1:
@@ -21,3 +22,6 @@ function getWeekDay(dayNum) {
 	}
 }
 weekday = getWeekDay(dayNum);
+var text = document.createTextNode(weekday);
+var element = document.getElementById("h3");
+element.innerHTML = weekday + "'s " + element.innerHTML;

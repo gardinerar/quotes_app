@@ -9,13 +9,13 @@ from .models import Quotes
 
 # Create your views here.
 def index(request):
-    latest_quote_list = Quotes.objects.order_by('-pub_date')[:5]
-    context = {'latest_quote_list': latest_quote_list,}
     updateQuotes()
+    latest_quote_list = Quotes.objects.order_by('-pub_date')[:15]
+    context = {'latest_quote_list': latest_quote_list,}
     return render(request, 'polls/index.html', context) 
 
 def detail(request):
-    latest_quote_list = Quotes.objects.order_by('-pub_date')[:5]
+    latest_quote_list = Quotes.objects.order_by('-pub_date')[:15]
     context = {'latest_quote_list': latest_quote_list,}
     return render(request, 'polls/detail.html', context) 
 
